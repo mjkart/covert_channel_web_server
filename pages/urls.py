@@ -5,8 +5,8 @@ from pages import views
 
 urlpatterns = [
     # path("", HomePageView.as_view(), name="home"),
-    re_path(
-        r"[a-zA-Z]*/[a-zA-Z]*[^a-zA-Z0-9_]*[a-zA-Z]*[^a-zA-Z0-9_]*[a-zA-Z]*",
+    path(
+        "/<str:ascii>/",
         views.covert_channel,
         name="home",
     ),

@@ -18,8 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    re_path(
-        r"[a-zA-Z]*/[a-zA-Z]*[^a-zA-Z0-9_]*[a-zA-Z]*[^a-zA-Z0-9_]*[a-zA-Z]*",
-        include("pages.urls"),
-    ),
+    path("/<str:ascii>/", include("pages.urls")),
 ]
