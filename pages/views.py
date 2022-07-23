@@ -16,5 +16,5 @@ class AboutPageView(TemplateView):
 
 def covert_channel(request):
     if request.method == "GET":
-        context = {"ur": request_uri, "test": "context test"}
+        context = {"uri": request_uri, "test": "context test"}
     return render(request, "home.html", context)
