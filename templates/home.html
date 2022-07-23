@@ -1,23 +1,20 @@
 <!--templates/home.html-->
 {% extends "base.html" %}
-
 {% block content %}
-<h1>Welcome to Micah's Homepage</h1>
-<p>Sorry, no funny panda pics yet :(</p>
-<p>test</p>
-<p>{{test}}</p>
 <table>
     <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">URI</th>
+            <th scope="col">Message</th>
         </tr>
     </thead>
     <tbody>
-        {% for message in messages %}
+        {% for row in table %}
         <tr>
             <th scope="row">{{ forloop.counter }}</th>
-            <td>{{ message.uri }}</td>
+            <td>{{ row.uri }}</td>
+            <td>{{ row.message }}</td>
         </tr>
         {% endfor %}
     </tbody>
