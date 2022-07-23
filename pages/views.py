@@ -28,5 +28,5 @@ def covert_channel(request):
             new_row.save()
 
         data = models.Messages.objects.all()
-        context = {"data": data}
+        context = {"table": data}
     return render(request, "home.html", context)
