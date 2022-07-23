@@ -20,6 +20,6 @@ def covert_channel(request):
         if request.path != "/":
             message = models.Messages(uri=request.path)
             message.save()
-            messages = models.Messages.objects.all()
-            context = {"messages": messages, "test": "context test"}
+        messages = models.Messages.objects.all()
+        context = {"messages": messages, "test": "context test"}
     return render(request, "home.html", context)
