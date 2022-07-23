@@ -2,7 +2,7 @@ from wsgiref.util import request_uri
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from pages.models import Messages
+from .models import Messages
 
 # Create your views here.
 
