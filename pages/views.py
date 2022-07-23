@@ -2,6 +2,7 @@ from wsgiref.util import request_uri
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.shortcuts import render
+from pages.models import Messages
 
 # Create your views here.
 
@@ -16,5 +17,8 @@ class AboutPageView(TemplateView):
 
 def covert_channel(request):
     if request.method == "GET":
-        context = {"uri": request_uri, "test": "context test"}
+        message = Messages(uri=request_uri)
+        message.save()
+        messages = Messages.objects.all()
+        context = {"messages": messages, "test": "context test"}
     return render(request, "home.html", context)

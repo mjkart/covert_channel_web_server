@@ -6,5 +6,19 @@
 <p>Sorry, no funny panda pics yet :(</p>
 <p>test</p>
 <p>{{test}}</p>
-<p>uri: {{uri}}</p>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">URI</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for message in messages %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ message.uri }}</td>
+        </tr>
+    </tbody>
+</table>
 {% endblock content %}
