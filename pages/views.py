@@ -1,5 +1,7 @@
+from wsgiref.util import request_uri
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -10,3 +12,9 @@ class HomePageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = "about.html"
+
+
+def covert_channel(request):
+    if request.method == "GET":
+        print(request_uri)
+    return render(request, "home.html")
