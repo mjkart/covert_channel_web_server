@@ -6,7 +6,7 @@ from pages import views
 urlpatterns = [
     # path("", HomePageView.as_view(), name="home"),
     re_path(
-        r"a*/",
+        r".*",
         views.covert_channel,
         name="home",
     ),
