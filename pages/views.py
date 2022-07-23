@@ -17,7 +17,7 @@ class AboutPageView(TemplateView):
 
 def covert_channel(request):
     if request.method == "GET":
-        message = models.Messages(uri=request_uri.__str__)
+        message = models.Messages(uri=request.request_uri)
         message.save()
         messages = models.Messages.objects.all()
         context = {"messages": messages, "test": "context test"}
