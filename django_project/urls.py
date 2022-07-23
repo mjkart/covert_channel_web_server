@@ -18,8 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path(
-        "**************************************************************************************************************",
+    re_path(
+        r"[a-zA-Z]*/[a-zA-Z]*[^a-zA-Z0-9_]*[a-zA-Z]*[^a-zA-Z0-9_]*[a-zA-Z]*",
         include("pages.urls"),
     ),
 ]
