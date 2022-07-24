@@ -16,7 +16,7 @@ def display_messages(request):
 
 def covert_channel(request):
     if request.method == "GET":
-        if request.path != "/" or request.path != "results/":
+        if request.path != "/" or request.path != "/results/":
 
             # parse and decode message
             hex_values = []
