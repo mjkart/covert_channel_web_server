@@ -1,3 +1,4 @@
+import re
 from wsgiref.util import request_uri
 from django.shortcuts import render
 from django.views.generic import TemplateView
