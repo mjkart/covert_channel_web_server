@@ -8,14 +8,6 @@ from pages import models
 # Create your views here.
 
 
-class HomePageView(TemplateView):
-    template_name = "home.html"
-
-
-class AboutPageView(TemplateView):
-    template_name = "about.html"
-
-
 def display_messages(request):
     data = models.Messages.objects.all()
     context = {"table": data}
@@ -24,7 +16,7 @@ def display_messages(request):
 
 def covert_channel(request):
     if request.method == "GET":
-        if request.path != "/":
+        if request.path != "/" | request.path != "results/":
 
             # parse and decode message
             hex_values = []
@@ -59,7 +51,4 @@ def covert_channel(request):
             # add message to database
             new_row = models.Messages(uri=res_path, message=ascii_str)
             new_row.save()
-
-        data = models.Messages.objects.all()
-        context = {"table": data}
-    return render(request, "home.html", context)
+    return render(request, "home.html")
