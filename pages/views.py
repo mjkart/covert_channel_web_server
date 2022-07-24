@@ -16,6 +16,12 @@ class AboutPageView(TemplateView):
     template_name = "about.html"
 
 
+def display_messages(request):
+    data = models.Messages.objects.all()
+    context = {"table": data}
+    return render(request, "home.html", context)
+
+
 def covert_channel(request):
     if request.method == "GET":
         if request.path != "/":
